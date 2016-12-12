@@ -1,7 +1,10 @@
 (function(self) {
   'use strict';
 
-  if (self.fetch) {
+  if (/Edge\/\d./i.test(navigator.userAgent)) {
+    console.log('Temporarily patch Edge with polyfill for fetch(); see: https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8653298/')
+  }
+  else if (self.fetch) {
     return
   }
 
